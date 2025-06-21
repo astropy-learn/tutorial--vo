@@ -1,0 +1,260 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 154, in wrapped
+    asyncio.get_running_loop()
+RuntimeError: no running event loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 158, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+conesearch.list_catalogs()
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mSSLCertVerificationError[39m                  Traceback (most recent call last)
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/urllib/request.py:1344[39m, in [36mAbstractHTTPHandler.do_open[39m[34m(self, http_class, req, **http_conn_args)[39m
+[32m   1343[39m [38;5;28;01mtry[39;00m:
+[32m-> [39m[32m1344[39m     [43mh[49m[43m.[49m[43mrequest[49m[43m([49m[43mreq[49m[43m.[49m[43mget_method[49m[43m([49m[43m)[49m[43m,[49m[43m [49m[43mreq[49m[43m.[49m[43mselector[49m[43m,[49m[43m [49m[43mreq[49m[43m.[49m[43mdata[49m[43m,[49m[43m [49m[43mheaders[49m[43m,[49m
+[32m   1345[39m [43m              [49m[43mencode_chunked[49m[43m=[49m[43mreq[49m[43m.[49m[43mhas_header[49m[43m([49m[33;43m'[39;49m[33;43mTransfer-encoding[39;49m[33;43m'[39;49m[43m)[49m[43m)[49m
+[32m   1346[39m [38;5;28;01mexcept[39;00m [38;5;167;01mOSError[39;00m [38;5;28;01mas[39;00m err: [38;5;66;03m# timeout error[39;00m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/http/client.py:1338[39m, in [36mHTTPConnection.request[39m[34m(self, method, url, body, headers, encode_chunked)[39m
+[32m   1337[39m [38;5;250m[39m[33;03m"""Send a complete request to the server."""[39;00m
+[32m-> [39m[32m1338[39m [38;5;28;43mself[39;49m[43m.[49m[43m_send_request[49m[43m([49m[43mmethod[49m[43m,[49m[43m [49m[43murl[49m[43m,[49m[43m [49m[43mbody[49m[43m,[49m[43m [49m[43mheaders[49m[43m,[49m[43m [49m[43mencode_chunked[49m[43m)[49m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/http/client.py:1384[39m, in [36mHTTPConnection._send_request[39m[34m(self, method, url, body, headers, encode_chunked)[39m
+[32m   1383[39m     body = _encode(body, [33m'[39m[33mbody[39m[33m'[39m)
+[32m-> [39m[32m1384[39m [38;5;28;43mself[39;49m[43m.[49m[43mendheaders[49m[43m([49m[43mbody[49m[43m,[49m[43m [49m[43mencode_chunked[49m[43m=[49m[43mencode_chunked[49m[43m)[49m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/http/client.py:1333[39m, in [36mHTTPConnection.endheaders[39m[34m(self, message_body, encode_chunked)[39m
+[32m   1332[39m     [38;5;28;01mraise[39;00m CannotSendHeader()
+[32m-> [39m[32m1333[39m [38;5;28;43mself[39;49m[43m.[49m[43m_send_output[49m[43m([49m[43mmessage_body[49m[43m,[49m[43m [49m[43mencode_chunked[49m[43m=[49m[43mencode_chunked[49m[43m)[49m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/http/client.py:1093[39m, in [36mHTTPConnection._send_output[39m[34m(self, message_body, encode_chunked)[39m
+[32m   1092[39m [38;5;28;01mdel[39;00m [38;5;28mself[39m._buffer[:]
+[32m-> [39m[32m1093[39m [38;5;28;43mself[39;49m[43m.[49m[43msend[49m[43m([49m[43mmsg[49m[43m)[49m
+[32m   1095[39m [38;5;28;01mif[39;00m message_body [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[32m   1096[39m 
+[32m   1097[39m     [38;5;66;03m# create a consistent interface to message_body[39;00m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/http/client.py:1037[39m, in [36mHTTPConnection.send[39m[34m(self, data)[39m
+[32m   1036[39m [38;5;28;01mif[39;00m [38;5;28mself[39m.auto_open:
+[32m-> [39m[32m1037[39m     [38;5;28;43mself[39;49m[43m.[49m[43mconnect[49m[43m([49m[43m)[49m
+[32m   1038[39m [38;5;28;01melse[39;00m:
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/http/client.py:1479[39m, in [36mHTTPSConnection.connect[39m[34m(self)[39m
+[32m   1477[39m     server_hostname = [38;5;28mself[39m.host
+[32m-> [39m[32m1479[39m [38;5;28mself[39m.sock = [38;5;28;43mself[39;49m[43m.[49m[43m_context[49m[43m.[49m[43mwrap_socket[49m[43m([49m[38;5;28;43mself[39;49m[43m.[49m[43msock[49m[43m,[49m
+[32m   1480[39m [43m                                      [49m[43mserver_hostname[49m[43m=[49m[43mserver_hostname[49m[43m)[49m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/ssl.py:455[39m, in [36mSSLContext.wrap_socket[39m[34m(self, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, session)[39m
+[32m    449[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mwrap_socket[39m([38;5;28mself[39m, sock, server_side=[38;5;28;01mFalse[39;00m,
+[32m    450[39m                 do_handshake_on_connect=[38;5;28;01mTrue[39;00m,
+[32m    451[39m                 suppress_ragged_eofs=[38;5;28;01mTrue[39;00m,
+[32m    452[39m                 server_hostname=[38;5;28;01mNone[39;00m, session=[38;5;28;01mNone[39;00m):
+[32m    453[39m     [38;5;66;03m# SSLSocket class handles server_hostname encoding before it calls[39;00m
+[32m    454[39m     [38;5;66;03m# ctx._wrap_socket()[39;00m
+[32m--> [39m[32m455[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43msslsocket_class[49m[43m.[49m[43m_create[49m[43m([49m
+[32m    456[39m [43m        [49m[43msock[49m[43m=[49m[43msock[49m[43m,[49m
+[32m    457[39m [43m        [49m[43mserver_side[49m[43m=[49m[43mserver_side[49m[43m,[49m
+[32m    458[39m [43m        [49m[43mdo_handshake_on_connect[49m[43m=[49m[43mdo_handshake_on_connect[49m[43m,[49m
+[32m    459[39m [43m        [49m[43msuppress_ragged_eofs[49m[43m=[49m[43msuppress_ragged_eofs[49m[43m,[49m
+[32m    460[39m [43m        [49m[43mserver_hostname[49m[43m=[49m[43mserver_hostname[49m[43m,[49m
+[32m    461[39m [43m        [49m[43mcontext[49m[43m=[49m[38;5;28;43mself[39;49m[43m,[49m
+[32m    462[39m [43m        [49m[43msession[49m[43m=[49m[43msession[49m
+[32m    463[39m [43m    [49m[43m)[49m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/ssl.py:1041[39m, in [36mSSLSocket._create[39m[34m(cls, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, context, session)[39m
+[32m   1040[39m                 [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([33m"[39m[33mdo_handshake_on_connect should not be specified for non-blocking sockets[39m[33m"[39m)
+[32m-> [39m[32m1041[39m             [38;5;28;43mself[39;49m[43m.[49m[43mdo_handshake[49m[43m([49m[43m)[49m
+[32m   1042[39m [38;5;28;01mexcept[39;00m:
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/ssl.py:1319[39m, in [36mSSLSocket.do_handshake[39m[34m(self, block)[39m
+[32m   1318[39m         [38;5;28mself[39m.settimeout([38;5;28;01mNone[39;00m)
+[32m-> [39m[32m1319[39m     [38;5;28;43mself[39;49m[43m.[49m[43m_sslobj[49m[43m.[49m[43mdo_handshake[49m[43m([49m[43m)[49m
+[32m   1320[39m [38;5;28;01mfinally[39;00m:
+
+[31mSSLCertVerificationError[39m: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)
+
+During handling of the above exception, another exception occurred:
+
+[31mURLError[39m                                  Traceback (most recent call last)
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/site-packages/astropy/utils/data.py:1246[39m, in [36m_try_url_open[39m[34m(source_url, timeout, http_headers, ftp_tls, ssl_context, allow_insecure)[39m
+[32m   1245[39m [38;5;28;01mtry[39;00m:
+[32m-> [39m[32m1246[39m     [38;5;28;01mreturn[39;00m [43murlopener[49m[43m.[49m[43mopen[49m[43m([49m[43mreq[49m[43m,[49m[43m [49m[43mtimeout[49m[43m=[49m[43mtimeout[49m[43m)[49m
+[32m   1247[39m [38;5;28;01mexcept[39;00m urllib.error.URLError [38;5;28;01mas[39;00m exc:
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/urllib/request.py:515[39m, in [36mOpenerDirector.open[39m[34m(self, fullurl, data, timeout)[39m
+[32m    514[39m sys.audit([33m'[39m[33murllib.Request[39m[33m'[39m, req.full_url, req.data, req.headers, req.get_method())
+[32m--> [39m[32m515[39m response = [38;5;28;43mself[39;49m[43m.[49m[43m_open[49m[43m([49m[43mreq[49m[43m,[49m[43m [49m[43mdata[49m[43m)[49m
+[32m    517[39m [38;5;66;03m# post-process response[39;00m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/urllib/request.py:532[39m, in [36mOpenerDirector._open[39m[34m(self, req, data)[39m
+[32m    531[39m protocol = req.type
+[32m--> [39m[32m532[39m result = [38;5;28;43mself[39;49m[43m.[49m[43m_call_chain[49m[43m([49m[38;5;28;43mself[39;49m[43m.[49m[43mhandle_open[49m[43m,[49m[43m [49m[43mprotocol[49m[43m,[49m[43m [49m[43mprotocol[49m[43m [49m[43m+[49m
+[32m    533[39m [43m                          [49m[33;43m'[39;49m[33;43m_open[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[43mreq[49m[43m)[49m
+[32m    534[39m [38;5;28;01mif[39;00m result:
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/urllib/request.py:492[39m, in [36mOpenerDirector._call_chain[39m[34m(self, chain, kind, meth_name, *args)[39m
+[32m    491[39m func = [38;5;28mgetattr[39m(handler, meth_name)
+[32m--> [39m[32m492[39m result = [43mfunc[49m[43m([49m[43m*[49m[43margs[49m[43m)[49m
+[32m    493[39m [38;5;28;01mif[39;00m result [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/urllib/request.py:1392[39m, in [36mHTTPSHandler.https_open[39m[34m(self, req)[39m
+[32m   1391[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mhttps_open[39m([38;5;28mself[39m, req):
+[32m-> [39m[32m1392[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43mdo_open[49m[43m([49m[43mhttp[49m[43m.[49m[43mclient[49m[43m.[49m[43mHTTPSConnection[49m[43m,[49m[43m [49m[43mreq[49m[43m,[49m
+[32m   1393[39m [43m                        [49m[43mcontext[49m[43m=[49m[38;5;28;43mself[39;49m[43m.[49m[43m_context[49m[43m)[49m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/urllib/request.py:1347[39m, in [36mAbstractHTTPHandler.do_open[39m[34m(self, http_class, req, **http_conn_args)[39m
+[32m   1346[39m [38;5;28;01mexcept[39;00m [38;5;167;01mOSError[39;00m [38;5;28;01mas[39;00m err: [38;5;66;03m# timeout error[39;00m
+[32m-> [39m[32m1347[39m     [38;5;28;01mraise[39;00m URLError(err)
+[32m   1348[39m r = h.getresponse()
+
+[31mURLError[39m: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>
+
+During handling of the above exception, another exception occurred:
+
+[31mURLError[39m                                  Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[3][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [43mconesearch[49m[43m.[49m[43mlist_catalogs[49m[43m([49m[43m)[49m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/site-packages/astroquery/vo_conesearch/conesearch.py:362[39m, in [36mlist_catalogs[39m[34m(**kwargs)[39m
+[32m    330[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mlist_catalogs[39m(**kwargs):
+[32m    331[39m [38;5;250m    [39m[33;03m"""[39;00m
+[32m    332[39m [33;03m    Return the available Cone Search catalogs as a list of strings.[39;00m
+[32m    333[39m [33;03m    These can be used for the ``catalog_db`` argument to[39;00m
+[32m   (...)[39m[32m    360[39m 
+[32m    361[39m [33;03m    """[39;00m
+[32m--> [39m[32m362[39m     [38;5;28;01mreturn[39;00m [43mvos_catalog[49m[43m.[49m[43mlist_catalogs[49m[43m([49m[43mconf[49m[43m.[49m[43mconesearch_dbname[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/site-packages/astroquery/vo_conesearch/vos_catalog.py:937[39m, in [36mlist_catalogs[39m[34m(service_type, cache, verbose, **kwargs)[39m
+[32m    905[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mlist_catalogs[39m(service_type, cache=[38;5;28;01mTrue[39;00m, verbose=[38;5;28;01mTrue[39;00m, **kwargs):
+[32m    906[39m [38;5;250m    [39m[33;03m"""List the catalogs available for the given service type.[39;00m
+[32m    907[39m 
+[32m    908[39m [33;03m    Parameters[39;00m
+[32m   (...)[39m[32m    935[39m 
+[32m    936[39m [33;03m    """[39;00m
+[32m--> [39m[32m937[39m     [38;5;28;01mreturn[39;00m [43mget_remote_catalog_db[49m[43m([49m[43mservice_type[49m[43m,[49m[43m [49m[43mcache[49m[43m=[49m[43mcache[49m[43m,[49m
+[32m    938[39m [43m                                 [49m[43mverbose[49m[43m=[49m[43mverbose[49m[43m)[49m.list_catalogs(**kwargs)
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/site-packages/astroquery/vo_conesearch/vos_catalog.py:656[39m, in [36mget_remote_catalog_db[39m[34m(dbname, cache, verbose)[39m
+[32m    631[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mget_remote_catalog_db[39m(dbname, *, cache=[38;5;28;01mTrue[39;00m, verbose=[38;5;28;01mTrue[39;00m):
+[32m    632[39m [38;5;250m    [39m[33;03m"""[39;00m
+[32m    633[39m [33;03m    Get a database of VO services (which is a JSON file) from a remote[39;00m
+[32m    634[39m [33;03m    location.[39;00m
+[32m   (...)[39m[32m    654[39m 
+[32m    655[39m [33;03m    """[39;00m
+[32m--> [39m[32m656[39m     [38;5;28;01mreturn[39;00m [43mVOSDatabase[49m[43m.[49m[43mfrom_json[49m[43m([49m
+[32m    657[39m [43m        [49m[43murljoin_keep_path[49m[43m([49m[43mconf[49m[43m.[49m[43mvos_baseurl[49m[43m,[49m[43m [49m[43mdbname[49m[43m [49m[43m+[49m[43m [49m[33;43m'[39;49m[33;43m.json[39;49m[33;43m'[39;49m[43m)[49m[43m,[49m
+[32m    658[39m [43m        [49m[43mencoding[49m[43m=[49m[33;43m'[39;49m[33;43mutf8[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[43mcache[49m[43m=[49m[43mcache[49m[43m,[49m[43m [49m[43mshow_progress[49m[43m=[49m[43mverbose[49m[43m)[49m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/site-packages/astroquery/vo_conesearch/vos_catalog.py:524[39m, in [36mVOSDatabase.from_json[39m[34m(cls, filename, **kwargs)[39m
+[32m    487[39m [38;5;129m@classmethod[39m
+[32m    488[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mfrom_json[39m([38;5;28mcls[39m, filename, **kwargs):
+[32m    489[39m [38;5;250m    [39m[33;03m"""[39;00m
+[32m    490[39m [33;03m    Create a database of VO services from a JSON file.[39;00m
+[32m    491[39m 
+[32m   (...)[39m[32m    522[39m 
+[32m    523[39m [33;03m    """[39;00m
+[32m--> [39m[32m524[39m [43m    [49m[38;5;28;43;01mwith[39;49;00m[43m [49m[43mget_readable_fileobj[49m[43m([49m[43mfilename[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m[43m [49m[38;5;28;43;01mas[39;49;00m[43m [49m[43mfd[49m[43m:[49m
+[32m    525[39m [43m        [49m[43mtree[49m[43m [49m[43m=[49m[43m [49m[43mjson[49m[43m.[49m[43mload[49m[43m([49m[43mfd[49m[43m)[49m
+[32m    527[39m     [38;5;28;01mreturn[39;00m [38;5;28mcls[39m(tree)
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/contextlib.py:137[39m, in [36m_GeneratorContextManager.__enter__[39m[34m(self)[39m
+[32m    135[39m [38;5;28;01mdel[39;00m [38;5;28mself[39m.args, [38;5;28mself[39m.kwds, [38;5;28mself[39m.func
+[32m    136[39m [38;5;28;01mtry[39;00m:
+[32m--> [39m[32m137[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mnext[39;49m[43m([49m[38;5;28;43mself[39;49m[43m.[49m[43mgen[49m[43m)[49m
+[32m    138[39m [38;5;28;01mexcept[39;00m [38;5;167;01mStopIteration[39;00m:
+[32m    139[39m     [38;5;28;01mraise[39;00m [38;5;167;01mRuntimeError[39;00m([33m"[39m[33mgenerator didn[39m[33m'[39m[33mt yield[39m[33m"[39m) [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;28;01mNone[39;00m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/site-packages/astropy/utils/data.py:356[39m, in [36mget_readable_fileobj[39m[34m(name_or_obj, encoding, cache, show_progress, remote_timeout, sources, http_headers, use_fsspec, fsspec_kwargs, close_files)[39m
+[32m    354[39m is_url = _is_url(name_or_obj)
+[32m    355[39m [38;5;28;01mif[39;00m is_url:
+[32m--> [39m[32m356[39m     name_or_obj = [43mdownload_file[49m[43m([49m
+[32m    357[39m [43m        [49m[43mname_or_obj[49m[43m,[49m
+[32m    358[39m [43m        [49m[43mcache[49m[43m=[49m[43mcache[49m[43m,[49m
+[32m    359[39m [43m        [49m[43mshow_progress[49m[43m=[49m[43mshow_progress[49m[43m,[49m
+[32m    360[39m [43m        [49m[43mtimeout[49m[43m=[49m[43mremote_timeout[49m[43m,[49m
+[32m    361[39m [43m        [49m[43msources[49m[43m=[49m[43msources[49m[43m,[49m
+[32m    362[39m [43m        [49m[43mhttp_headers[49m[43m=[49m[43mhttp_headers[49m[43m,[49m
+[32m    363[39m [43m    [49m[43m)[49m
+[32m    364[39m fileobj = io.FileIO(name_or_obj, [33m"[39m[33mr[39m[33m"[39m)
+[32m    365[39m [38;5;28;01mif[39;00m is_url [38;5;129;01mand[39;00m [38;5;129;01mnot[39;00m cache:
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/site-packages/astropy/utils/data.py:1584[39m, in [36mdownload_file[39m[34m(remote_url, cache, show_progress, timeout, sources, pkgname, http_headers, ssl_context, allow_insecure)[39m
+[32m   1578[39m     [38;5;28;01mraise[39;00m [38;5;167;01mKeyError[39;00m(
+[32m   1579[39m         [33mf[39m[33m"[39m[33mNo sources listed and file [39m[38;5;132;01m{[39;00mremote_url[38;5;132;01m}[39;00m[33m not in cache! [39m[33m"[39m
+[32m   1580[39m         [33m"[39m[33mPlease include primary URL in sources if you want it to be [39m[33m"[39m
+[32m   1581[39m         [33m"[39m[33mincluded as a valid source.[39m[33m"[39m
+[32m   1582[39m     )
+[32m   1583[39m [38;5;28;01melif[39;00m [38;5;28mlen[39m(sources) == [32m1[39m:
+[32m-> [39m[32m1584[39m     [38;5;28;01mraise[39;00m errors[sources[[32m0[39m]]
+[32m   1585[39m [38;5;28;01melse[39;00m:
+[32m   1586[39m     [38;5;28;01mraise[39;00m urllib.error.URLError(
+[32m   1587[39m         [33mf[39m[33m"[39m[33mUnable to open any source! Exceptions were [39m[38;5;132;01m{[39;00merrors[38;5;132;01m}[39;00m[33m"[39m
+[32m   1588[39m     ) [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01merrors[39;00m[sources[[32m0[39m]]
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/site-packages/astropy/utils/data.py:1548[39m, in [36mdownload_file[39m[34m(remote_url, cache, show_progress, timeout, sources, pkgname, http_headers, ssl_context, allow_insecure)[39m
+[32m   1546[39m [38;5;28;01mfor[39;00m source_url [38;5;129;01min[39;00m sources:
+[32m   1547[39m     [38;5;28;01mtry[39;00m:
+[32m-> [39m[32m1548[39m         f_name = [43m_download_file_from_source[49m[43m([49m
+[32m   1549[39m [43m            [49m[43msource_url[49m[43m,[49m
+[32m   1550[39m [43m            [49m[43mtimeout[49m[43m=[49m[43mtimeout[49m[43m,[49m
+[32m   1551[39m [43m            [49m[43mshow_progress[49m[43m=[49m[43mshow_progress[49m[43m,[49m
+[32m   1552[39m [43m            [49m[43mcache[49m[43m=[49m[43mcache[49m[43m,[49m
+[32m   1553[39m [43m            [49m[43mremote_url[49m[43m=[49m[43mremote_url[49m[43m,[49m
+[32m   1554[39m [43m            [49m[43mpkgname[49m[43m=[49m[43mpkgname[49m[43m,[49m
+[32m   1555[39m [43m            [49m[43mhttp_headers[49m[43m=[49m[43mhttp_headers[49m[43m,[49m
+[32m   1556[39m [43m            [49m[43mssl_context[49m[43m=[49m[43mssl_context[49m[43m,[49m
+[32m   1557[39m [43m            [49m[43mallow_insecure[49m[43m=[49m[43mallow_insecure[49m[43m,[49m
+[32m   1558[39m [43m        [49m[43m)[49m
+[32m   1559[39m         [38;5;66;03m# Success![39;00m
+[32m   1560[39m         [38;5;28;01mbreak[39;00m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/site-packages/astropy/utils/data.py:1332[39m, in [36m_download_file_from_source[39m[34m(source_url, show_progress, timeout, remote_url, cache, pkgname, http_headers, ftp_tls, ssl_context, allow_insecure)[39m
+[32m   1329[39m         [38;5;28;01melse[39;00m:
+[32m   1330[39m             [38;5;28;01mraise[39;00m
+[32m-> [39m[32m1332[39m [38;5;28;01mwith[39;00m [43m_try_url_open[49m[43m([49m
+[32m   1333[39m [43m    [49m[43msource_url[49m[43m,[49m
+[32m   1334[39m [43m    [49m[43mtimeout[49m[43m=[49m[43mtimeout[49m[43m,[49m
+[32m   1335[39m [43m    [49m[43mhttp_headers[49m[43m=[49m[43mhttp_headers[49m[43m,[49m
+[32m   1336[39m [43m    [49m[43mftp_tls[49m[43m=[49m[43mftp_tls[49m[43m,[49m
+[32m   1337[39m [43m    [49m[43mssl_context[49m[43m=[49m[43mssl_context[49m[43m,[49m
+[32m   1338[39m [43m    [49m[43mallow_insecure[49m[43m=[49m[43mallow_insecure[49m[43m,[49m
+[32m   1339[39m [43m[49m[43m)[49m [38;5;28;01mas[39;00m remote:
+[32m   1340[39m     info = remote.info()
+[32m   1341[39m     [38;5;28;01mtry[39;00m:
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/site-packages/astropy/utils/data.py:1268[39m, in [36m_try_url_open[39m[34m(source_url, timeout, http_headers, ftp_tls, ssl_context, allow_insecure)[39m
+[32m   1261[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m allow_insecure:
+[32m   1262[39m     msg += (
+[32m   1263[39m         [33m"[39m[33m or in both cases you can work around this by [39m[33m"[39m
+[32m   1264[39m         [33m"[39m[33mpassing allow_insecure=True, but only if you [39m[33m"[39m
+[32m   1265[39m         [33m"[39m[33munderstand the implications; the original error [39m[33m"[39m
+[32m   1266[39m         [33mf[39m[33m"[39m[33mwas: [39m[38;5;132;01m{[39;00mreason[38;5;132;01m}[39;00m[33m"[39m
+[32m   1267[39m     )
+[32m-> [39m[32m1268[39m     [38;5;28;01mraise[39;00m urllib.error.URLError(msg)
+[32m   1269[39m [38;5;28;01melse[39;00m:
+[32m   1270[39m     msg += [33m"[39m[33m. Re-trying with allow_insecure=True.[39m[33m"[39m
+
+[31mURLError[39m: <urlopen error Verification of TLS/SSL certificate at https://astroconda.org/aux/vo_databases/conesearch_good.json failed: this can mean either the server is misconfigured or your local root CA certificates are out-of-date; in the latter case this can usually be addressed by installing the Python package "certifi" (see the documentation for astropy.utils.data.download_file) or in both cases you can work around this by passing allow_insecure=True, but only if you understand the implications; the original error was: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>
+
