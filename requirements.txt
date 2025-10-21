@@ -1,4 +1,4 @@
 astropy
-astroquery>=0.4.10  # 2024-09-24 pinned for Gaia column capitalization issue
+astroquery==0.4.10  # 2024-09-24 pinned for Gaia column capitalization issue
 matplotlib
 numpy
